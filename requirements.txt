@@ -1,0 +1,7 @@
+FastAPI
+pymongo[srv]
+dnspython
+pandas
+openpyxl
+python-dotenv
+uvicorn
