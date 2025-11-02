@@ -15,6 +15,15 @@ load_dotenv()
 config = dotenv_values(".env")
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 MONGO_URI = config.get("MONGO_URI")
 DB_NAME = config.get("DB_NAME")
 COLLECTION_NAME = config.get("COLLECTION_NAME")
