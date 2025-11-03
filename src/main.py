@@ -10,6 +10,8 @@ import json
 from datetime import datetime
 from src.schemas.order import OrderProps
 from bson import ObjectId
+from fastapi.middleware.cors import CORSMiddleware
+
 
 load_dotenv()
 config = dotenv_values(".env")
@@ -17,10 +19,18 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://www.buchetul-simonei.com",
+        "https://buchetul-simonei.com",
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["Content-Disposition"],
 )
 
 
