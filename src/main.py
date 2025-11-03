@@ -10,8 +10,7 @@ import json
 from datetime import datetime
 from src.schemas.order import OrderProps
 from bson import ObjectId
-from fastapi.middleware.cors import CORSMiddleware
-
+from starlette.middleware.cors import CORSMiddleware
 
 load_dotenv()
 config = dotenv_values(".env")
