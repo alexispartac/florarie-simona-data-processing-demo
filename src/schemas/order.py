@@ -7,7 +7,7 @@ class OrderProductProps(BaseModel):
     id: str
     title: str
     price: float
-    category: str
+    title_category: str
     quantity: int
 
     class Config:
